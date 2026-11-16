@@ -1,4 +1,6 @@
-﻿
+﻿<!-- Integrar na página  -->
+@model List<projetoNovo.Models.Produto>
+
 @{
     ViewData["Title"] = "Início";
 }
@@ -58,6 +60,7 @@
 
 </section>
 
+<!-- Secção de destaque -->
 <section style="background-color: #142d4e;
                 color: white;
                 padding: 50px;
@@ -78,5 +81,32 @@
 
 </section>
 
-</section>
+<!-- Lista de produtos -->
+<section class="container my-5">
 
+    <h2 class="text-center mb-4">
+        Lista de Produtos
+    </h2>
+
+    <div class="row">
+
+        @foreach (var produto in Model)
+        {
+            <div class="col-md-4 mb-3">
+
+                <div class="card p-3">
+
+                    <h3>@produto.Nome</h3>
+
+                    <p> @produto.Id</p>
+
+                    <p>Preço: @produto.Preco €</p>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</section>
